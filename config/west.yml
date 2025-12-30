@@ -2,13 +2,25 @@ manifest:
   defaults:
     revision: v0.3
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+  - name: zmkfirmware
+    url-base: https://github.com/zmkfirmware
+    # Additional modules containing boards/shields/custom code can be listed here as well
+    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      import: app/west.yml
+  - name: zmk
+    remote: zmkfirmware
+    import: app/west.yml
+  - name: crosses
+    url: https://github.com/Good-Great-Grand-Wonderful/crosses
+    revision: main
+    path: modules/crosses
+  - name: crosses-36-zmk-template
+    url: https://github.com/Good-Great-Grand-Wonderful/crosses-36-zmk-template
+    revision: main
+    path: modules/crosses-36-zmk-template
+  - name: crosses-42-zmk-template
+    url: https://github.com/Good-Great-Grand-Wonderful/crosses-42-zmk-template
+    revision: main
+    path: modules/crosses-42-zmk-template
   self:
     path: config
